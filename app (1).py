@@ -7,7 +7,6 @@ from discord.ext import commands
 import os
 import asyncio
 
-# 设置可写缓存路径避免权限错误
 HF_HOME = '/tmp/hf_home'
 os.environ['HF_HOME'] = HF_HOME
 if not os.path.exists(HF_HOME):
@@ -63,10 +62,9 @@ def generate_response(user_input):
 
     return response
 
-# Gradio 界面
+
 interface = gr.Interface(fn=generate_response, inputs="text", outputs="text", title="亚丝娜聊天机器人")
 
-# Discord bot 设置
 intents = discord.Intents.default()
 intents.message_content = True
 bot = commands.Bot(command_prefix="!", intents=intents)
