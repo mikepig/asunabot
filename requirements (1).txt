@@ -1,0 +1,7 @@
+transformers
+torch>=2.1.0
+accelerate
+bitsandbytes==0.42.0
+gradio
+discord.py==2.3.2
+peft
